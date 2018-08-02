@@ -8,9 +8,12 @@ package com.sharma.tushar.calculator;
  * that is multiplication and division are solved first.
  */
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,27 +22,32 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    //necessary for calculation
+    //do not touch
+    private boolean stop = false;
+    private static final String TEXT_INPUT = "keyToTextviewContent";
 
-    boolean stop = false;
-    static String number=new String("0");
-
+    private TextView displayNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView txt = (TextView) findViewById(R.id.display);
-        txt.setText(number);
-        txt.setMovementMethod(new ScrollingMovementMethod());
+        displayNumber = (TextView) findViewById(R.id.display);
+        if(savedInstanceState != null &&
+                savedInstanceState.getString(TEXT_INPUT) != null) {
+            displayNumber.setText(savedInstanceState.getString(TEXT_INPUT));
+        }
+        displayNumber.setMovementMethod(new ScrollingMovementMethod());
 
         Button btn=(Button) findViewById(R.id.delete);
 
         //For delete button
         btn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                TextView t = (TextView) findViewById(R.id.display);
-                t.setText("0");
+            public boolean onLongClick(View v){
+                displayNumber = (TextView) findViewById(R.id.display);
+                displayNumber.setText("0");
                 stop = false;
                 return true;
             }
@@ -50,13 +58,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
-                if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("1");
-                }else {
-                    text.append(1 + "");
-                }
+
             }
         });
 
@@ -65,12 +67,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("2");
+                    displayNumber.setText("2");
                 }else {
-                    text.append(2 + "");
+                    displayNumber.append(2 + "");
                 }
             }
         });
@@ -80,12 +82,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("3");
+                    displayNumber.setText("3");
                 }else {
-                    text.append(3 + "");
+                    displayNumber.append(3 + "");
                 }
             }
         });
@@ -95,12 +97,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("4");
+                    displayNumber.setText("4");
                 }else {
-                    text.append(4 + "");
+                    displayNumber.append(4 + "");
                 }
             }
         });
@@ -110,12 +112,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("5");
+                    displayNumber.setText("5");
                 }else {
-                    text.append(5 + "");
+                    displayNumber.append(5 + "");
                 }
             }
         });
@@ -125,12 +127,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("6");
+                    displayNumber.setText("6");
                 }else {
-                    text.append(6 + "");
+                    displayNumber.append(6 + "");
                 }
             }
         });
@@ -140,12 +142,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("7");
+                    displayNumber.setText("7");
                 }else {
-                    text.append(7 + "");
+                    displayNumber.append(7 + "");
                 }
             }
         });
@@ -155,12 +157,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("8");
+                    displayNumber.setText("8");
                 }else {
-                    text.append(8 + "");
+                    displayNumber.append(8 + "");
                 }
             }
         });
@@ -170,12 +172,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("0") || t.equals("Invalid")) {
-                    text.setText("9");
+                    displayNumber.setText("9");
                 }else {
-                    text.append(9 + "");
+                    displayNumber.append(9 + "");
                 }
             }
         });
@@ -185,12 +187,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.equals("Invalid")){
-                    text.setText("0");
+                    displayNumber.setText("0");
                 }else
-                    text.append(0 + "");
+                    displayNumber.append(0 + "");
             }
         });
 
@@ -199,10 +201,10 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.charAt(t.length()-1)!='-' && t.charAt(t.length()-1)!='+' && t.charAt(t.length()-1)!='x' && t.charAt(t.length()-1)!='/') {
-                    text.append("x");
+                    displayNumber.append("x");
                     stop = false;
                 }
             }
@@ -213,10 +215,10 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.charAt(t.length()-1)!='-' && t.charAt(t.length()-1)!='+' && t.charAt(t.length()-1)!='x' && t.charAt(t.length()-1)!='/') {
-                    text.append("/");
+                    displayNumber.append("/");
                     stop = false;
                 }
             }
@@ -227,10 +229,10 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.charAt(t.length()-1)!='-' && t.charAt(t.length()-1)!='+' && t.charAt(t.length()-1)!='x' && t.charAt(t.length()-1)!='/') {
-                    text.append("+");
+                    displayNumber.append("+");
                     stop = false;
                 }
             }
@@ -241,10 +243,10 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.charAt(t.length()-1)!='-' && t.charAt(t.length()-1)!='+' && t.charAt(t.length()-1)!='x' && t.charAt(t.length()-1)!='/') {
-                    text.append("-");
+                    displayNumber.append("-");
                     stop = false;
                 }
             }
@@ -256,12 +258,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.charAt(t.length()-1)=='-' || t.charAt(t.length()-1)=='+' || t.charAt(t.length()-1)=='x' || t.charAt(t.length()-1)=='/')
-                    text.append("0.");
+                    displayNumber.append("0.");
                 else if (t.charAt(t.length()-1) != '.' && !stop){
-                    text.append(".");
+                    displayNumber.append(".");
                     stop = true;
                 }
             }
@@ -272,15 +274,15 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView text = (TextView) findViewById(R.id.display);
-                String t = text.getText().toString();
+                displayNumber = (TextView) findViewById(R.id.display);
+                String t = displayNumber.getText().toString();
                 if(t.endsWith(".")){
                     stop = false;
                 }
                 if (t.length() == 1)
-                    text.setText("0");
+                    displayNumber.setText("0");
                 else
-                    text.setText(t.substring(0,t.length()-1));
+                    displayNumber.setText(t.substring(0,t.length()-1));
             }
         });
 
@@ -296,22 +298,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        TextView text = (TextView) findViewById(R.id.display);
-        number = text.getText().toString();
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(TEXT_INPUT,displayNumber.getText().toString() );
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        TextView text = (TextView) findViewById(R.id.display);
-        text.setText(number);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.show_scientific, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.change_to_scientific) {
+
+            Intent changeToScientificLayout = new Intent();
+        }
     }
 
     public void equal() {
-        TextView text = (TextView) findViewById(R.id.display);
-        String t = text.getText().toString();
+        displayNumber = (TextView) findViewById(R.id.display);
+        String t = displayNumber.getText().toString();
         ArrayList<Double> num = new ArrayList<Double>();
         ArrayList<Character> operator = new ArrayList<Character>();
         int strt = 0, i = 0;
@@ -387,13 +396,13 @@ public class MainActivity extends AppCompatActivity {
             double dub = num.get(0);
             int total = (int) (dub);
             if ((double) total == dub) {
-                text.setText(total + "");
+                displayNumber.setText(total + "");
                 stop = false;
             }else {
-                text.setText(dub + "");
+                displayNumber.setText(dub + "");
             }
         } catch (Exception e) {
-            text.setText("Invalid");
+            displayNumber.setText("Invalid");
             stop = false;
         }
     }
