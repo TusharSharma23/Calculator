@@ -1,6 +1,5 @@
 package com.sharma.tushar.calculator;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,20 +8,23 @@ public class ClickListener implements View.OnClickListener {
 
     private TextView displayNumber;
     private int buttonRes;
-
-    ClickListener(int buttonRes) {
+    private View rootView;
+    ClickListener(int buttonRes, View rootView) {
         this.buttonRes = buttonRes;
+        this.rootView = rootView;
     }
 
     @Override
     public void onClick(View view) {
-        displayNumber = (TextView) view.findViewById(R.id.display);
-        Button clickedButtonText = (Button) view.findViewById(buttonRes);
-        String t = clickedButtonText.getText().toString().trim();
-        if(t.equals("0") || t.equals("Invalid")) {
-            displayNumber.setText(t);
+        displayNumber = rootView.findViewById(R.id.display);
+        Button clickedButtonText = view.findViewById(buttonRes);
+        String displayText = displayNumber.getText().toString();
+        String buttonText = clickedButtonText.getText().toString().trim();
+        if(displayText.equals("0") ||
+                displayText.equals("Invalid")) {
+            displayNumber.setText(buttonText);
         }else {
-            displayNumber.append(t + "");
+            displayNumber.append(buttonText + "");
         }
     }
 }
