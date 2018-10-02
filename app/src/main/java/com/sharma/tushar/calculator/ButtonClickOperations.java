@@ -169,13 +169,13 @@ public class ButtonClickOperations {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                equal(view);
+                equal(displayNumber.getText().toString());
             }
         });
     }
 
-    private static final void equal(View view) {
-        String t = displayNumber.getText().toString();
+    private static void equal(String expression) {
+        String t = expression;
         ArrayList<Double> num = new ArrayList<Double>();
         ArrayList<Character> operator = new ArrayList<Character>();
         int strt = 0, i = 0;
@@ -261,5 +261,7 @@ public class ButtonClickOperations {
             stop = false;
         }
     }
+
+
 
 }

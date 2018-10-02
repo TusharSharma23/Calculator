@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.sharma.tushar.calculator.MainActivity"
-        android:orientation="vertical"
-        android:background="#120e97">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#120e97"
+    android:orientation="vertical"
+    tools:context="com.sharma.tushar.calculator.MainActivity">
 
-        <TextView
-            android:id="@+id/display"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:textAlignment="textEnd"
-            android:gravity="bottom"
-            android:textSize="40sp"
-            android:layout_weight="1"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"
-            android:background="#ffffff"
-            tools:ignore="RtlCompat"
-            android:maxLines="3"
-            android:scrollbars="horizontal"/>
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:gravity="bottom"
+        android:maxLines="3"
+        android:paddingBottom="14dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:scrollbars="horizontal"
+        android:textAlignment="textEnd"
+        android:textSize="40sp"
+        tools:ignore="RtlCompat" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginTop="7dp"
         android:layout_weight="2"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingRight="14dp">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="4"
-            android:background="#77efd9">
+            android:background="#77efd9"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,18 +45,18 @@
 
                 <Button
                     android:id="@+id/one"
-                    android:text="1"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="1" />
 
                 <Button
                     android:id="@+id/two"
-                    android:text="2"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="2" />
 
                 <Button
                     android:id="@+id/three"
-                    android:text="3"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="3" />
 
             </LinearLayout>
 
@@ -67,23 +64,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal"
-                android:background="#77efd9">
+                android:background="#77efd9"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/four"
-                    android:text="4"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="4" />
 
                 <Button
                     android:id="@+id/five"
-                    android:text="5"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="5" />
 
                 <Button
                     android:id="@+id/six"
-                    android:text="6"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="6" />
 
 
             </LinearLayout>
@@ -96,20 +93,20 @@
 
                 <Button
                     android:id="@+id/seven"
-                    android:text="7"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="7" />
 
 
                 <Button
                     android:id="@+id/eight"
-                    android:text="8"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="8" />
 
 
                 <Button
                     android:id="@+id/nine"
-                    android:text="9"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="9" />
 
 
             </LinearLayout>
@@ -122,18 +119,18 @@
 
                 <Button
                     android:id="@+id/decimal"
-                    android:text="."
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="." />
 
                 <Button
                     android:id="@+id/zero"
-                    android:text="0"
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="0" />
 
                 <Button
                     android:id="@+id/equal"
-                    android:text="="
-                    style="@style/buttons"/>
+                    style="@style/buttons"
+                    android:text="=" />
 
             </LinearLayout>
 
@@ -143,35 +140,35 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="1"
-            android:background="#4dbee1">
+            android:background="#4dbee1"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/delete"
-                android:text="DEL"
+                style="@style/Functionbutton"
                 android:longClickable="true"
-                style="@style/Functionbutton"/>
+                android:text="DEL" />
 
             <Button
                 android:id="@+id/multiply"
-                android:text="X"
-                style="@style/Functionbutton"/>
+                style="@style/Functionbutton"
+                android:text="X" />
 
             <Button
                 android:id="@+id/divide"
-                android:text="/"
-                style="@style/Functionbutton"/>
+                style="@style/Functionbutton"
+                android:text="/" />
 
             <Button
                 android:id="@+id/subtract"
-                android:text="-"
-                style="@style/Functionbutton"/>
+                style="@style/Functionbutton"
+                android:text="-" />
 
             <Button
                 android:id="@+id/add"
-                android:text="+"
-                style="@style/Functionbutton"/>
+                style="@style/Functionbutton"
+                android:text="+" />
         </LinearLayout>
 
     </LinearLayout>
