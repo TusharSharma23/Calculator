@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#120e97"
-    android:orientation="vertical"
-    tools:context="com.sharma.tushar.calculator.MainActivity"
-    android:tag="com.sharma.tushar.calculator.NumbersFragment">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/display"
@@ -24,11 +22,28 @@
         android:textSize="40sp"
         tools:ignore="RtlCompat" />
 
-    <fragment
-        android:id="@+id/numpad_fragment"
-        android:name="com.sharma.tushar.calculator.NumbersFragment"
+    <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"/>
+        android:layout_weight="2">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/numpad_fragment"
+            android:name="com.sharma.tushar.calculator.NumbersFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        </FrameLayout>
+
+        <fragment
+            android:id="@+id/scientific_fragment"
+            android:name="com.sharma.tushar.calculator.ScientificFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"/>
+
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.change_to_scientific) {
-            Intent changeToScientificLayout = new Intent();
+            Intent changeToScientificLayout = new Intent( MainActivity.this, ScientificCalc.class);
             return true;
         }
         return onOptionsItemSelected(item);
