@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingRight="14dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#77efd9"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/one"
+                style="@style/buttons"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/two"
+                style="@style/buttons"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/three"
+                style="@style/buttons"
+                android:text="3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#77efd9"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/four"
+                style="@style/buttons"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/five"
+                style="@style/buttons"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/six"
+                style="@style/buttons"
+                android:text="6" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/seven"
+                style="@style/buttons"
+                android:text="7" />
+
+
+            <Button
+                android:id="@+id/eight"
+                style="@style/buttons"
+                android:text="8" />
+
+
+            <Button
+                android:id="@+id/nine"
+                style="@style/buttons"
+                android:text="9" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decimal"
+                style="@style/buttons"
+                android:text="." />
+
+            <Button
+                android:id="@+id/zero"
+                style="@style/buttons"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/equal"
+                style="@style/buttons"
+                android:text="=" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#4dbee1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/delete"
+            style="@style/Functionbutton"
+            android:longClickable="true"
+            android:text="DEL" />
+
+        <Button
+            android:id="@+id/multiply"
+            style="@style/Functionbutton"
+            android:text="X" />
+
+        <Button
+            android:id="@+id/divide"
+            style="@style/Functionbutton"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/subtract"
+            style="@style/Functionbutton"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/add"
+            style="@style/Functionbutton"
+            android:text="+" />
+    </LinearLayout>
+
+</LinearLayout>
